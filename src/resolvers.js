@@ -8,17 +8,32 @@ const resolvers = {
 
         return {
           idDrink,
-          drinkName: strDrink,
+          strDrink,
           isAlcoholic: strAlcoholic,
-          drinkThumb: strDrinkThumb,
+          strDrinkThumb,
         }
-      } catch (error) {
+      }catch (error) {
         console.log(error)
       }
     },
     searchByIngredientName: async (_, { ingredientName }, { dataSources }) => {
-      const response = await dataSources.drinkAPI.searchByIngredientName(ingredientName);
-      console.log(response)
+      try {
+        const { drinks } = await dataSources.drinkAPI.searchByIngredientName(ingredientName);
+        
+        return drinks;
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    searchByAlchoolicOrNon: async (_, { isAlcoholicOrNon }, { dataSources }) => {
+      try{
+        const { drinks } = await dataSources.drinkAPI.getByAlchoolicOrNon(isAlcoholicOrNon)
+
+        return drinks
+      }catch(error){
+        console.log(error)
+      }
+
     }
   },
 };

@@ -4,15 +4,21 @@ const typeDefs = gql`
 
   type Cocktail {
     idDrink: String
-    drinkName: String
-    isAlcoholic: String
-    drinkThumb: String
+    strDrink: String
+    strDrinkThumb: String
   }
 
   type Query {
     randomCocktail: Cocktail
-
     searchByIngredientName(ingredientName: String): [Cocktail]
+    searchByAlchoolicOrNon(isAlcoholicOrNon: String): [Cocktail]
+  }
+
+  type RandomCocktail { 
+    idDrink: String,
+    strDrink: String,
+    isAlcoholic: String,
+    strDrinkThumb: String,
   }
 
 `;

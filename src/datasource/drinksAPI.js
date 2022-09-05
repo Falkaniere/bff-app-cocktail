@@ -23,7 +23,11 @@ class DrinkAPI extends RESTDataSource {
   }
 
   async getDrinkDetails(id) {
-    return this.get(`lookup.php?i=${id}`)
+    return this.get(`lookup.php?i=${id}`);
+  }
+
+  async getByAlchoolicOrNon(AlchoolicOrNon){ 
+    return this.get(`filter.php?a=${AlchoolicOrNon}`);
   }
 }
 
