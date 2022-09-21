@@ -9,7 +9,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    randomCocktail: Cocktail
+    randomCocktail: RandomCocktail
     searchByIngredientName(ingredientName: String): [Cocktail]
     searchByAlchoolicOrNon(isAlcoholicOrNon: String): [Cocktail]
   }

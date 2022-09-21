@@ -1,4 +1,4 @@
-const resolvers = {
+const Search = {
   Query: {
     randomCocktail: async (_, __,{ dataSources }) => {
       try {
@@ -7,10 +7,10 @@ const resolvers = {
         const { idDrink, strDrink, strAlcoholic, strDrinkThumb } = drinks[0];
 
         return {
-          idDrink,
-          strDrink,
-          isAlcoholic: strAlcoholic,
-          strDrinkThumb,
+            idDrink,
+            strDrink,
+            isAlcoholic: strAlcoholic,
+            strDrinkThumb,
         }
       }catch (error) {
         console.log(error)
@@ -33,9 +33,8 @@ const resolvers = {
       }catch(error){
         console.log(error)
       }
-
     }
   },
 };
-
-module.exports = resolvers;
+  
+module.exports = Search;

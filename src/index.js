@@ -1,9 +1,9 @@
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer, makeExecutableSchema } = require('apollo-server');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 const DrinkAPI = require('./datasource/drinksAPI');
 
-require('dotenv').config({path: __dirname + '/.env'})
+require('dotenv').config({path: __dirname + '/.env'});
 
 const server = new ApolloServer({
   typeDefs,
